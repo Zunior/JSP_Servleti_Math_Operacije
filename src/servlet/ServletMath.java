@@ -45,9 +45,9 @@ public class ServletMath extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int a = 0;
-		int b = 0;
-		int rezultat = 0;
+		double a = 0;
+		double b = 0;
+		double rezultat = 0;
 		boolean dobar = true;
 		
 		HttpSession session = request.getSession();
@@ -61,7 +61,7 @@ public class ServletMath extends HttpServlet {
 			dobar = false;
 		}else {
 			try {
-				a = Integer.parseInt(aString);
+				a = Double.parseDouble(aString);
 			}catch(Exception e) {
 				errorMessageA = "Niste uneli broj";
 				dobar = false;
@@ -73,7 +73,7 @@ public class ServletMath extends HttpServlet {
 			dobar = false;
 		}else {
 			try {
-				b = Integer.parseInt(bString);
+				b = Double.parseDouble(bString);
 			}catch(Exception e) {
 				errorMessageB = "Niste uneli broj";
 				dobar = false;
